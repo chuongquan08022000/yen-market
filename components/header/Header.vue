@@ -22,7 +22,7 @@
         </span>
       </NuxtLink>
       <div class="flex gap-8 items-center pr-4 lg:px-4 py-2 w-fit">
-        <Button variant="outline-primary" class="size-10 p-0 border-2 lg:block hidden">
+        <Button variant="outline-primary" class="size-10 p-0 border-2 lg:flex hidden">
           <ShoppingBasket class="size-6" color="#ca2628" />
         </Button>
         <div class="flex items-center gap-3 min-w-24">
@@ -37,8 +37,8 @@
 
 <script setup lang="ts">
 import { PhoneCall, Search, UserRound, ShoppingBasket } from 'lucide-vue-next'
-import { Button } from '@/components/ui/button'
-import Input from '@/components/ui/input/Input.vue'
+import { Button } from '~/components/ui/button'
+import Input from '~/components/ui/input/Input.vue'
 
 const { setLocale } = useI18n()
 </script>

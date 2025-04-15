@@ -1,9 +1,9 @@
 <script setup>
-
+import NavigationBar from '~/components/header/NavigationBar.vue'
 </script>
 
 <template>
   <div>
-    <h1>Home</h1>
+    <NavigationBar class="w-80" />
   </div>
 </template>

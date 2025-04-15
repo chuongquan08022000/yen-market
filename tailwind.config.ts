@@ -60,6 +60,7 @@ const config: Config = {
         },
         'athens-gray': '#F8F9FA',
         tundoraapprox: '#4C4C4C',
+        alabasterapprox: '#F7F7F7',
       },
       borderRadius: {
         lg: 'var(--radius)',

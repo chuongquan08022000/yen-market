@@ -4,5 +4,8 @@
     "hotline": "Hotline",
     "hi": "Hi, ",
     "login": "Login"
+  },
+  "navbar": {
+    "title": "List of item"
   }
 }
