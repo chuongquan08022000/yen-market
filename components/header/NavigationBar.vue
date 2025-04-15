@@ -95,8 +95,12 @@ Promise.all([fetchCategories(), fetchSubCategories()])
 
 <template>
   <div class="flex items-center justify-center w-full bg-primary">
+    <div class="custom-container py-3 items-center gap-2 lg:flex hidden">
+      <Menu color="white" class="cursor-pointer" />
+      <span class="font-bold uppercase text-lg text-white">{{ $t('navbar.title') }}</span>
+    </div>
     <div
-      class="custom-container py-3 flex items-center gap-2"
+      class="custom-container py-3 flex items-center gap-2 lg:hidden"
       @click.prevent="handleClickNavigation(NavigationItem.Category)"
     >
       <Menu color="white" class="cursor-pointer" />

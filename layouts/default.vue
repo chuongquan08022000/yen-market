@@ -5,10 +5,10 @@ import NavigationBar from '~/components/header/NavigationBar.vue'
 </script>
 
 <template>
-  <div>
+  <main>
     <Header />
     <NavigationBar />
     <slot />
     <Footer />
-  </div>
+  </main>
 </template>

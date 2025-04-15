@@ -8,7 +8,14 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ['@nuxt/eslint', '@nuxt/image', 'shadcn-nuxt', '@nuxtjs/i18n'],
+  modules: [
+    '@nuxt/eslint',
+    '@nuxt/image',
+    'shadcn-nuxt',
+    '@nuxtjs/i18n',
+    '@nuxtjs/robots',
+    '@nuxtjs/sitemap',
+  ],
   css: ['@/assets/css/main.css'],
 
   postcss: {

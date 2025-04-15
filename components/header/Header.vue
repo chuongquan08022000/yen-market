@@ -1,6 +1,6 @@
 <template>
-  <div class="flex justify-center items-center h-24 fixed top-0 w-full z-50 lg:bg-none bg-gradient-to-t from-[#dc7273] to-[#ca2628] shadow-md lg:bg-athens-gray">
-    <div class="custom-container h-full flex items-center justify-between gap-4">
+  <header class="flex justify-center items-center h-24 fixed top-0 w-full z-50 lg:bg-none bg-gradient-to-t from-[#dc7273] to-[#ca2628] shadow-md lg:bg-athens-gray">
+    <nav class="custom-container h-full flex items-center justify-between gap-4">
       <NuxtLink to="/" class="min-w-24">
         <NuxtImg src="/logo-brand.png" class="w-40" alt="Logo" />
       </NuxtLink>
@@ -30,8 +30,8 @@
           <NuxtImg src="/images/flag-en.svg" class="h-8 cursor-pointer" alt="Logo" @click="setLocale('en')" />
         </div>
       </div>
-    </div>
-  </div>
+    </nav>
+  </header>
   <div class="h-24" />
 </template>
 
