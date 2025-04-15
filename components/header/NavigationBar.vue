@@ -1,17 +1,28 @@
 <script setup lang="ts">
-import { Button } from '@/components/ui/button'
+import { Button } from '~/components/ui/button'
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from '@/components/ui/carousel'
-import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
-import { Menu } from 'lucide-vue-next'
+} from '~/components/ui/carousel'
+import { Popover, PopoverContent, PopoverTrigger } from '~/components/ui/popover'
+import { Menu, House, AlignLeft, PhoneCall, ShoppingBasket, UserRound } from 'lucide-vue-next'
 import type { CategoryObject } from '~/models/category/CategoryObject'
+import NavigationBarMobile from '~/components/header/NavigationBarMobile.vue'
 
+enum NavigationItem {
+  Home = 1,
+  Category,
+  Hotline,
+  Cart,
+  Account,
+}
+
+const { t } = useI18n()
 const loadingCategories = ref(false)
+const showDrawer = ref(false)
 const categories = ref<CategoryObject[]>([])
 const subCategories = ref<CategoryObject[]>([])
 
@@ -34,6 +45,15 @@ const carousels = ref([
   'https://mastererp.mylifecompany.com/Resources/Images/banner%201.jpg',
   'https://mastererp.mylifecompany.com/Resources/Images/Banner%208.jpg',
 ])
+const navigationItems = computed(() => {
+  return [
+    { value: NavigationItem.Home, title: t('navbar.home'), href: '/', icon: House },
+    { value: NavigationItem.Category, title: t('navbar.category'), href: '#', icon: AlignLeft },
+    { value: NavigationItem.Hotline, title: t('navbar.hotline'), href: '#', icon: PhoneCall },
+    { value: NavigationItem.Cart, title: t('navbar.cart'), href: '#', icon: ShoppingBasket },
+    { value: NavigationItem.Account, title: t('navbar.account'), href: '#', icon: UserRound },
+  ]
+})
 
 async function fetchCategories() {
   try {
@@ -62,19 +82,30 @@ async function fetchSubCategories() {
   }
 }
 
+function handleClickNavigation(value: NavigationItem) {
+  if (value === NavigationItem.Category) {
+    console.log({ value })
+
+    showDrawer.value = true
+  }
+}
+
 Promise.all([fetchCategories(), fetchSubCategories()])
 </script>
 
 <template>
   <div class="flex items-center justify-center w-full bg-primary">
-    <div class="custom-container py-3 flex items-center gap-2">
+    <div
+      class="custom-container py-3 flex items-center gap-2"
+      @click.prevent="handleClickNavigation(NavigationItem.Category)"
+    >
       <Menu color="white" class="cursor-pointer" />
       <span class="font-bold uppercase text-lg text-white">{{ $t('navbar.title') }}</span>
     </div>
   </div>
   <div class="flex items-center justify-center w-full">
     <div class="custom-container flex">
-      <div class="w-80 flex flex-col">
+      <div class="w-80 hidden lg:flex flex-col">
         <Popover v-for="category in listCategories" :key="category.GroupID">
           <PopoverTrigger as-child class="border-b bg-alabasterapprox">
             <Button class="text-lg h-10 rounded-none justify-start" variant="ghost">{{
@@ -108,4 +139,21 @@ Promise.all([fetchCategories(), fetchSubCategories()])
       </Carousel>
     </div>
   </div>
+  <Teleport to="body">
+    <div class="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-white rounded-t-lg shadow-md">
+      <div class="flex items-center justify-center h-full">
+        <NuxtLink
+          v-for="item in navigationItems"
+          :key="item.value"
+          class="flex items-center flex-col justify-center gap-1 w-1/5 [&.router-link-active]:text-primary py-3"
+          :to="item.href"
+          @click="() => handleClickNavigation(item.value)"
+        >
+          <component :is="item.icon" class="w-6 h-6 text-current" />
+          <span class="text-sm font-semibold text-current">{{ item.title }}</span>
+        </NuxtLink>
+      </div>
+    </div>
+  </Teleport>
+  <NavigationBarMobile v-model="showDrawer" :list-categories="listCategories" />
 </template>

@@ -6,7 +6,12 @@
     "login": "Login"
   },
   "navbar": {
-    "title": "List of item"
+    "title": "List of item",
+    "home": "Home",
+    "category": "Category",
+    "hotline": "Hotline",
+    "cart": "Cart",
+    "account": "Account"
   },
   "product": {
     "seeAll": "See all"

@@ -6,7 +6,12 @@
     "login": "Đăng nhập"
   },
   "navbar": {
-    "title": "Danh mục sản phẩm"
+    "title": "Danh mục sản phẩm",
+    "home": "Trang chủ",
+    "category": "Danh mục",
+    "hotline": "Hotline",
+    "cart": "Giỏ hàng",
+    "account": "Tài khoản"
   },
   "product": {
     "seeAll": "Xem tất cả"

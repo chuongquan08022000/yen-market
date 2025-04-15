@@ -1,14 +1,14 @@
 <template>
-  <div class="flex justify-center bg-athens-gray">
-    <div class="grid grid-cols-4 w-2/3 my-4">
-      <div class="flex flex-col col-span-2">
+  <div class="flex justify-center bg-athens-gray mb-20 lg:mb-0">
+    <div class="grid grid-cols-4 gap-y-4 mx-4 lg:mx-0 lg:w-2/3 my-4">
+      <div class="flex flex-col col-span-4 lg:col-span-2">
         <h4 class="text-3xl mb-2">{{ $t('footer.contact.title') }}</h4>
         <p v-for="item in contact" :key="item.label" class="text-sm">
           <strong>{{ item.label }}:</strong> {{ item.value }}
         </p>
         <p>Mã số doanh nghiệp: 0317179405. Đăng ký lần đầu: 20/09/2008</p>
       </div>
-      <div class="flex flex-col gap-2 col-span-1">
+      <div class="flex flex-col gap-2 col-span-4 lg:col-span-1">
         <h4 class="text-3xl">{{ $t('footer.social.title') }}</h4>
         <div class="flex gap-1">
           <a v-for="item in social" :key="item.src" :href="item.link" target="_blank">
@@ -22,7 +22,7 @@
           />
         </a>
       </div>
-      <div class="flex col-span-1 py-4">
+      <div class="flex col-span-4 lg:col-span-1 py-4">
         <a href="#" target="_blank">
           <NuxtImg
             src="https://bizweb.dktcdn.net/100/382/166/themes/900578/assets/mew_store.png?1724210132257"
