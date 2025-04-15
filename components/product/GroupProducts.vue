@@ -5,16 +5,23 @@
       <div class="grid grid-cols-5 gap-4">
         <CardProduct v-for="item in items" :key="item.ItemId" :driver="item" />
       </div>
-      <div className="flex w-full items-center gap-4 px-6">
-        <hr className="h-px w-full flex-1 border" >
-        <NuxtLink
-          to="/"
-          :class="cn(buttonVariants({ variant: 'default', size: 'lg' }), 'rounded-full w-40 h-12 text-lg')"
-        >
-          {{ $t('product.seeAll') }}
-        </NuxtLink>
-        <hr className="h-px w-full flex-1 border" >
-      </div>
+      <ClientOnly>
+        <div className="flex w-full items-center gap-4 px-6">
+          <hr className="h-px w-full max-w-[calc(100%-40px)] flex-1 border" />
+          <NuxtLink
+            to="/"
+            :class="
+              cn(
+                buttonVariants({ variant: 'default', size: 'lg' }),
+                'rounded-full w-40 h-12 text-lg'
+              )
+            "
+          >
+            {{ $t('product.seeAll') }}
+          </NuxtLink>
+          <hr className="h-px w-full max-w-[calc(100%-40px)] flex-1 border" />
+        </div>
+      </ClientOnly>
     </div>
   </div>
 </template>

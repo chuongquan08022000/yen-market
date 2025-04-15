@@ -1,5 +1,25 @@
 {
   "header": {
-    "search": "Tìm kiếm"
+    "search": "Tìm kiếm",
+    "hotline": "Hotline",
+    "hi": "Hi, ",
+    "login": "Đăng nhập"
+  },
+  "navbar": {
+    "title": "Danh mục sản phẩm"
+  },
+  "product": {
+    "seeAll": "Xem tất cả"
+  },
+  "footer": {
+    "contact": {
+      "title": "Thông tin liên hệ",
+      "email": "Email",
+      "phone": "Hotline",
+      "address": "Địa chỉ"
+    },
+    "social": {
+      "title": "Kết nối với chúng tôi"
+    }
   }
 }

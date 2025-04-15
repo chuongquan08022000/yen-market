@@ -10,5 +10,16 @@
   },
   "product": {
     "seeAll": "See all"
+  },
+  "footer": {
+    "contact": {
+      "title": "Contact",
+      "email": "Email",
+      "phone": "Phone",
+      "address": "Address"
+    },
+    "social": {
+      "title": "Social"
+    }
   }
 }

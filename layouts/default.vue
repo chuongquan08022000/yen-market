@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import Footer from '~/components/footer/Footer.vue'
 import Header from '~/components/header/Header.vue'
 import NavigationBar from '~/components/header/NavigationBar.vue'
 </script>
@@ -8,5 +9,6 @@ import NavigationBar from '~/components/header/NavigationBar.vue'
     <Header />
     <NavigationBar />
     <slot />
+    <Footer />
   </div>
 </template>
