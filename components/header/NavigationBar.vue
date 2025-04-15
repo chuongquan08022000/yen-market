@@ -42,7 +42,6 @@ async function fetchCategories() {
     if (data.value) {
       categories.value = data.value
     }
-    console.log({ response: data.value })
   } catch (error) {
     console.error(error)
   } finally {
@@ -56,7 +55,6 @@ async function fetchSubCategories() {
     if (data.value) {
       subCategories.value = data.value
     }
-    console.log({ response: data.value })
   } catch (error) {
     console.error(error)
   } finally {
@@ -65,8 +63,6 @@ async function fetchSubCategories() {
 }
 
 Promise.all([fetchCategories(), fetchSubCategories()])
-
-console.log({ listCategories: listCategories.value })
 </script>
 
 <template>

@@ -1,9 +1,11 @@
 <script setup>
-import NavigationBar from '~/components/header/NavigationBar.vue'
+import SectionOne from '~/components/home/SectionOne/SectionOne.vue'
+import SectionTwo from '~/components/home/SectionTwo/SectionTwo.vue'
 </script>
 
 <template>
   <div>
-    <NavigationBar class="w-80" />
+    <SectionOne />
+    <SectionTwo />
   </div>
 </template>
